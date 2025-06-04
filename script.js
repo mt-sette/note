@@ -1,16 +1,18 @@
-const noteTextarea = document.getElementById('note');
+import { EditorView, basicSetup } from 'https://esm.sh/@codemirror/basic-setup';
+import { EditorState } from 'https://esm.sh/@codemirror/state';
+import { markdown } from 'https://esm.sh/@codemirror/lang-markdown';
 
-// Character and word count
-function updateCounts() {
-    const text = noteTextarea.value;
-    const charCount = text.length;
-    const wordCount = text.trim() ? text.trim().split(/\s+/).length : 0;
+// Initialize CodeMirror in the #editor div
+const cmDiv = document.getElementById('editor');
+let editor = new EditorView({
+    state: EditorState.create({
+        doc: '',
+        extensions: [basicSetup, markdown()],
+    }),
+    parent: cmDiv,
+});
 
-    document.getElementById(
-        'char-count'
-    ).textContent = `${charCount} characters`;
-    document.getElementById('word-count').textContent = `${wordCount} words`;
-}
-
-// Initialize counts
-updateCounts();
+editor.dispatch = function (tr) {
+    EditorView.prototype.dispatch.call(this, tr);
+    updateCounts();
+}.bind(editor);
