@@ -5,9 +5,9 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        sans-serif;
     background-color: #f8f9fa;
-    color: #333;
     line-height: 1.6;
     font-size: 25px;
 }
@@ -16,12 +16,12 @@ body {
     width: 90%;
     max-width: 800px;
     margin: 2rem auto;
-    padding: 2rem;}
+    padding: 2rem;
+}
 
-textarea:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+.editor {
+    max-width: 80ch;
+    word-wrap: break-word;
 }
 
 /* Dark mode support */
@@ -30,16 +30,16 @@ textarea:focus {
         background-color: #1a1a1a;
         color: #e9ecef;
     }
-    
+
     .container {
         background: #2d3748;
-        box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
     }
-    
+
     h1[contenteditable] {
         color: #f7fafc;
     }
-    
+
     textarea {
         background-color: #4a5568;
         border-color: #718096;
