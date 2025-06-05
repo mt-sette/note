@@ -24,6 +24,15 @@ body {
     word-wrap: break-word;
 }
 
+.save {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
     body {
