@@ -16,22 +16,14 @@ import {
     foldKeymap,
 } from 'https://esm.sh/@codemirror/language';
 import { markdown } from 'https://esm.sh/@codemirror/lang-markdown';
-import { vim } from 'https://esm.sh/@replit/codemirror-vim';
 
-// Load saved content from localStorage
-const savedContent = localStorage.getItem('noteContent') || '';
-
-// Initialize CodeMirror in the #editor div without line numbers
 const cmDiv = document.getElementById('editor');
 const editor = new EditorView({
     state: EditorState.create({
-        doc: savedContent,
+        doc: '',
         extensions: [
             EditorView.lineWrapping,
-            placeholder(
-                "The perfect opening line doesn't exist. Start imperfectly..."
-            ),
-            vim(),
+            placeholder('Start writing your notes here...'),
             history(),
             indentOnInput(),
             bracketMatching(),
@@ -42,13 +34,6 @@ const editor = new EditorView({
                 indentWithTab,
             ]),
             markdown(),
-            // Auto-save to localStorage on content change
-            EditorView.updateListener.of((update) => {
-                if (update.docChanged) {
-                    const content = update.state.doc.toString();
-                    localStorage.setItem('noteContent', content);
-                }
-            }),
         ],
     }),
     parent: cmDiv,
