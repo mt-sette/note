@@ -9,46 +9,14 @@ body {
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
+    font-size: 25px;
 }
 
 .container {
     width: 90%;
     max-width: 800px;
     margin: 2rem auto;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-    padding: 2rem;
-}
-
-h1[contenteditable] {
-    font-size: 2rem;
-    font-weight: 600;
-    border: none;
-    outline: none;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-    cursor: text;
-}
-
-h1[contenteditable]:focus {
-    background-color: #f8f9fa;
-    border-radius: 4px;
-    padding: 0.25rem;
-}
-
-textarea {
-    width: 100%;
-    height: 70vh;
-    font-size: 16px;
-    padding: 1rem;
-    border: 2px solid #e9ecef;
-    border-radius: 8px;
-    resize: vertical;
-    font-family: inherit;
-    line-height: 1.6;
-    transition: border-color 0.2s ease;
-}
+    padding: 2rem;}
 
 textarea:focus {
     outline: none;
